@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RULER INSANE BIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Embed Do DC -->
+    <meta content="RULER INSANE BIO" property="og:title" />
+    <meta content="Bio Site Of @historyofinsane" property="og:description" />
+    <meta content="localhost" property="og:url" />
+    <meta content="" property="og:image" />
+    <meta content="#000000" data-react-helmet="true" name="theme-color" />
+
+    <style>
+        /* General styles */
+    
+  
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="toji1.mp4" type="video/mp4" />
+        </video>
+        <!-- Background Music -->
+        <audio id="bgMusic" loop>
+            <source src="toji1.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+
+    <!-- Content Section -->
+    <div class="caption">
+        <div class="card-container">
+            <div class="card">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="therulerinsane.png" alt="Logo">
+                </div>
+                <!-- Name -->
+                <div class="nick">𝐈ɴ𝐬ᴀɴᴇ 🇦🇱                </div>
+                <!-- Links -->
+                <div class="icon-links">
+                    <a href="https://t.me/bl3ckwo1f" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.youtube.com/@therulerinsane" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/historyofinsane/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <!-- Song Card -->
+                <div class="song-card">
+                    <div class="song-cover">
+                        <img src="therulerinsane.png" alt="Okładka">
+                    </div>
+                    <div class="song-info">
+                        <div class="song-title">𝐈ɴ𝐬ᴀɴᴇ</div>
+                        <div class="song-author">Programmer x Social Media Expert</div>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Control Button -->
+    <div class="audio-control" id="audioControl">
+        <div class="audio-icon" id="audioIcon"><i class="fas fa-volume-mute"></i></div>
+        <div class="audio-text" id="audioText">Tap To Play Music</div>
+    </div>
+
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        const audioControl = document.getElementById('audioControl');
+        const audioIcon = document.getElementById('audioIcon');
+        const audioText = document.getElementById('audioText');
+
+        let isPlaying = false;
+
+        // Function to toggle audio play/pause
+        function toggleAudio() {
+            if (isPlaying) {
+                bgMusic.pause();
+                audioIcon.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                bgMusic.play();
+                audioIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Function to animate text
+        function animateText() {
+            audioText.classList.add('active');
+            setTimeout(() => {
+                audioText.classList.remove('active');
+            }, 1000);
+
+            // Repeat animation every 5 seconds
+            setTimeout(animateText, 5000);
+        }
+
+        // Initial call to animate text
+        animateText();
+
+        // Add click event listener to toggle audio
+        audioControl.addEventListener('click', toggleAudio);
+    </script>
+</body>
+</html>
